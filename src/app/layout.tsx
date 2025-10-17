@@ -1,5 +1,8 @@
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/layouts/Header";
+import Footer from "@/components/layouts/Footer";
+import { Metadata } from "next";
 
 const notoSansJp = Noto_Sans_JP({
   subsets: ["latin"],
@@ -7,15 +10,24 @@ const notoSansJp = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
 });
 
+export const metadata: Metadata = {
+  title: "占い・診断館",
+  description: "みんなで作る、新感覚の占い・診断サイト",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${notoSansJp.variable} antialiased`}>
+    <html lang="ja">
+      <body
+        className={`${notoSansJp.variable} antialiased bg-gray-900 text-white`}
+      >
+        <Header />
         <main className="flex-1 text-sm md:text-base">{children}</main>
+        <Footer />
       </body>
     </html>
   );
