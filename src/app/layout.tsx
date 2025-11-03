@@ -22,9 +22,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body
-        className={`${notoSansJp.variable} antialiased bg-gray-900 text-white`}
-      >
+      <body className={`${notoSansJp.variable} font-sans antialiased`}>
         <Header />
         <main className="flex-1 text-sm md:text-base">{children}</main>
         <Footer />
